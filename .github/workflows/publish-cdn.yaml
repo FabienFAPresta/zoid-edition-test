@@ -31,6 +31,6 @@ jobs:
           echo "Is new version: ${{ steps.cpv.outputs.is-new-version }}"
       - name: 🍾 Publish new version of config package
         if: steps.cpv.outputs.is-new-version == 'true'
-        run: npm run build && npm publish --access public
+        run: npm i && npm run build && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
