@@ -1,0 +1,35 @@
+name: Publish configuration to a CDN
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: © Checkout
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+
+      - name: 👁 Check package version
+        id: cpv
+        uses: PostHog/check-package-version@v2
+
+      - name: 🖥 Display versions
+        run: |
+          echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
+          echo "Published version: ${{ steps.cpv.outputs.published-version }}"
+          echo "Is new version: ${{ steps.cpv.outputs.is-new-version }}"
+      - name: 🍾 Publish new version of config package
+        if: steps.cpv.outputs.is-new-version == 'true'
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
