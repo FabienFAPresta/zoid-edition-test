@@ -39,7 +39,7 @@ jobs:
         id: cpv
         uses: PostHog/check-package-version@v2
         with:
-          - path: ./_dev/test-edition-cdc
+          path: ./_dev/test-edition-cdc
 
       - name: 🖥 Display versions
         run: |
