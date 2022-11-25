@@ -19,7 +19,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     library: {
       name: "EditionCDC",
-      type: "var",
     },
   },
 };
