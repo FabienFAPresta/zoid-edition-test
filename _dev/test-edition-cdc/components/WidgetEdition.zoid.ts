@@ -1,6 +1,6 @@
 import * as zoid from "zoid/dist/zoid.frameworks";
 
-export var WidgetEditionZoid = zoid.create({
+export const WidgetEditionZoid = zoid.create({
   tag: "widget-edition",
   url: "http://localhost:5173",
   dimensions: {
