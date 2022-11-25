@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { WidgetEditionZoid } from "./components/WidgetEdition.zoid";
+//import WidgetEditionZoid from "./zoid/components/WidgetEdition.zoid";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+//app.component("widget-edition", WidgetEditionZoid.driver("vue3"));
+app.mount("#app");
