@@ -38,7 +38,8 @@ jobs:
       - name: 👁 Check edition-cdc package version
         id: cpv
         uses: PostHog/check-package-version@v2
-        path: ./_dev/test-edition-cdc
+        with:
+          - path: ./_dev/test-edition-cdc
 
       - name: 🖥 Display versions
         run: |
