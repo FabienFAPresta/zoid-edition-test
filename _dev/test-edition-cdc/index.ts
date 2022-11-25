@@ -1,3 +1,6 @@
-export { WidgetEditionZoid } from "./components";
+import { WidgetEditionZoid } from "./components";
 
-console.log("Bundle zoid-edition-test loaded");
+export function test() {
+  console.log("Bundle zoid-edition-test loaded");
+  return WidgetEditionZoid;
+}
