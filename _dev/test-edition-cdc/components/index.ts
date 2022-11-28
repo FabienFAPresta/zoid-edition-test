@@ -1,1 +1,4 @@
-export { WidgetEditionZoid } from "./WidgetEdition.zoid";
+export {
+  WidgetEditionZoid,
+  WidgetEditionZoidLocal,
+} from "./WidgetEdition.zoid";

@@ -14,3 +14,12 @@ export const WidgetEditionZoid = zoid.create({
   //   },
   // },
 });
+
+export const WidgetEditionZoidLocal = zoid.create({
+  tag: "widget-edition-local",
+  url: "http://localhost:5174/",
+  dimensions: {
+    width: "100%",
+    height: "auto",
+  },
+});

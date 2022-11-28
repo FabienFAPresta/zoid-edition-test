@@ -1,6 +1,6 @@
 {
   "name": "test-edition-cdc",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Test edition cdc",
   "main": "dist/bundle.js",
   "scripts": {
