@@ -1,6 +1,6 @@
-import * as zoid from "zoid/dist/zoid";
+import { create } from "zoid/dist/zoid";
 
-export const WidgetEditionZoid = zoid.create({
+export const WidgetEditionZoid = create({
   tag: "widget-edition",
   url: "https://fabienfapresta.github.io/zoid-edition-test/",
   dimensions: {
