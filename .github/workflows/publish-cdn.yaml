@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   npm-publish:
@@ -19,7 +20,7 @@ jobs:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
 
-      - name: 👁 Check package version
+      - name: 👁 Check edition-component package version
         id: cpv
         uses: PostHog/check-package-version@v2
 
@@ -30,6 +31,23 @@ jobs:
           echo "Is new version: ${{ steps.cpv.outputs.is-new-version }}"
       - name: 🍾 Publish new version of config package
         if: steps.cpv.outputs.is-new-version == 'true'
-        run: npm publish --access public
+        run: npm i && npm run build && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 👁 Check edition-cdc package version
+        id: cpv-cdc
+        uses: PostHog/check-package-version@v2
+        with:
+          path: ./_dev/test-edition-cdc
+
+      - name: 🖥 Display versions
+        run: |
+          echo "Committed version: ${{ steps.cpv-cdc.outputs.committed-version }}"
+          echo "Published version: ${{ steps.cpv-cdc.outputs.published-version }}"
+          echo "Is new version: ${{ steps.cpv-cdc.outputs.is-new-version }}"
+      - name: 🍾 Publish new version of config package
+        if: steps.cpv-cdc.outputs.is-new-version == 'true'
+        run: cd ./_dev/test-edition-cdc && npm i && npm run build && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

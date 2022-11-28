@@ -1,0 +1,1 @@
+export { WidgetEditionZoid } from "./components";
