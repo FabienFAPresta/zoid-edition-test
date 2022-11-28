@@ -4,8 +4,8 @@ export const WidgetEditionZoid = zoid.create({
   tag: "widget-edition",
   url: "http://localhost:5173",
   dimensions: {
-    width: "400px",
-    height: "200px",
+    width: "500px",
+    height: "500px",
   },
   // props: {
   //   name: {
