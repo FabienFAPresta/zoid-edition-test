@@ -1,4 +1,4 @@
-import * as zoid from "zoid/dist/zoid.frameworks";
+import * as zoid from "zoid/dist/zoid";
 
 export const WidgetEditionZoid = zoid.create({
   tag: "widget-edition",
