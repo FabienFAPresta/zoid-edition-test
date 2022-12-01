@@ -1,1 +1,1 @@
-export { WidgetEditionZoid, WidgetEditionZoidLocal } from "./components";
+export * from "./components";
