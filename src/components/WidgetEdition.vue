@@ -2,7 +2,7 @@
     <div class="widget-edition">
         <h1>This is an Edition widget</h1>
         <p>Look what's inside {{ props.name }}!</p>
-        <p>{{ count }} <button @click="count++">➕</button></p>
+        <p>{{ count }} <button type="button" class="btn btn-primary" @click="count++">➕</button></p>
     </div>
 </template>
 
