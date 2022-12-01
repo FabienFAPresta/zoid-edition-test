@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "prestakit": "^1.2.0",
-    "test-edition-cdc": "^0.0.19",
+    "test-edition-cdc": "^0.0.20",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6",
     "zoid": "^9.0.86"
