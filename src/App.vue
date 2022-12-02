@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import WidgetEdition from './components/WidgetEdition.vue';
+
 </script>
 
 <template>
-  <div>
+  <div id="app">
+    <h1>{{ $t("welcome") }}</h1>
+    <router-view />
+  </div>
+  <!-- <div>
     <WidgetEdition name="John" />
     <br />
     <WidgetEdition name="Jack" />
-  </div>
+  </div> -->
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
