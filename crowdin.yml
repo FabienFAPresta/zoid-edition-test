@@ -4,7 +4,6 @@ append_commit_message: false
 pull_request_labels:
   - translations
 files:
-  - source: /src/locales
-    dest: test
+  - source: /src/locales/*.json
     translation: /src/locales/%two_letters_code%.json
     type: json
