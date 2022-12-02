@@ -5,6 +5,6 @@ pull_request_labels:
   - translations
 files:
   - source: /src/locales
-    dest: %two_letters_code%.json
+    dest: test
     translation: /src/locales/%two_letters_code%.json
     type: json
